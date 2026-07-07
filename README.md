@@ -53,7 +53,7 @@ It is mainly used for:
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/main/hotmilk_banner.png" width="95%" alt="Hotmilk banner" />
+  <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/main/assets/hotmilk_banner.png" width="99%" alt="Hotmilk banner" />
 </p>
 
 
