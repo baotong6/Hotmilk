@@ -77,9 +77,6 @@ Please check the manual before:
   <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/hotmilk_banner.png" width="85%" alt="Hotmilk banner" />
 </p>
 
-> If no banner image is available yet, delete this section or add an image at:
->
-> `assets/hotmilk_banner.png`
 
 ---
 
