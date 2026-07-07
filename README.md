@@ -61,7 +61,7 @@ It is mainly used for:
 
 ## 👤 Maintainer
 
-Maintained by **Tong Bao**.
+Maintained by [**Tong Bao**](https://baotong6.github.io/).
 
 For details, please refer to the [Hotmilk Wiki](https://github.com/baotong6/Hotmilk/wiki).
 
