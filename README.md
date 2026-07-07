@@ -7,9 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Platform-Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docs-GitHub%20Wiki-8A2BE2?style=for-the-badge&logo=github" />
 </p>
-
 ---
 
 # 🥛 Hotmilk Server
@@ -20,7 +18,7 @@ This repository serves as the landing page for internal documentation related to
 
 <p align="center">
   <a href="https://github.com/baotong6/Hotmilk/wiki">
-    <img src="https://img.shields.io/badge/📖%20Open%20the%20Server%20Manual-GitHub%20Wiki-blueviolet?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/📖%20Read%20the%20Server%20Manual-Click%20Here-blueviolet?style=for-the-badge" />
   </a>
 </p>
 
