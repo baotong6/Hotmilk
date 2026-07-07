@@ -52,29 +52,8 @@ It is mainly used for:
 
 ---
 
-## 🧭 Quick Start for New Users
-
-New users should first read the Wiki:
-
 <p align="center">
-  <a href="https://github.com/baotong6/Hotmilk/wiki">
-    <img src="https://img.shields.io/badge/Start%20Here-Read%20the%20Wiki-9333EA?style=for-the-badge&logo=readthedocs&logoColor=white" />
-  </a>
-</p>
-
-Please check the manual before:
-
-- creating or modifying large data products
-- running heavy jobs
-- changing shared software environments
-- writing into shared project directories
-
----
-
-## 🖼️ Optional Banner
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/hotmilk_banner.png" width="85%" alt="Hotmilk banner" />
+  <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/main/hotmilk_banner.png" width="95%" alt="Hotmilk banner" />
 </p>
 
 
