@@ -5,48 +5,68 @@ from email.message import EmailMessage
 from pathlib import Path
 
 
-def required_env(name: str) -> str:
+def get_required_env(name: str) -> str:
     value = os.environ.get(name, "").strip()
     if not value:
         raise RuntimeError(f"Missing required environment variable: {name}")
     return value
 
 
-smtp_host = required_env("SMTP_HOST")
-smtp_port = int(required_env("SMTP_PORT"))
-smtp_username = required_env("SMTP_USERNAME")
-smtp_password = required_env("SMTP_PASSWORD")
+smtp_host = get_required_env("SMTP_HOST")
+smtp_port = int(get_required_env("SMTP_PORT"))
+smtp_username = get_required_env("SMTP_USERNAME").strip()
 
-mail_from = required_env("MAIL_FROM")
-mail_to = required_env("MAIL_TO")
+# 删除应用密码中可能包含的普通空格和不可见空格
+smtp_password = (
+    get_required_env("SMTP_PASSWORD")
+    .replace(" ", "")
+    .replace("\u00a0", "")
+    .replace("\r", "")
+    .replace("\n", "")
+    .replace("\t", "")
+)
 
-module = required_env("UPDATE_MODULE")
-subject = required_env("UPDATE_SUBJECT")
-update_file = Path(required_env("UPDATE_FILE"))
+mail_from = get_required_env("MAIL_FROM")
+mail_to_raw = get_required_env("MAIL_TO")
 
-repository_url = required_env("REPOSITORY_URL")
-commit_sha = required_env("COMMIT_SHA")
+module = get_required_env("UPDATE_MODULE")
+subject = get_required_env("UPDATE_SUBJECT")
+update_file = Path(get_required_env("UPDATE_FILE"))
 
 if not update_file.is_file():
-    raise FileNotFoundError(f"Update file does not exist: {update_file}")
+    raise FileNotFoundError(f"Update file not found: {update_file}")
 
 content = update_file.read_text(encoding="utf-8").strip()
 
 if not content:
     raise RuntimeError(f"Update file is empty: {update_file}")
 
+# 支持逗号、分号和换行分隔多个邮箱地址
+recipients = [
+    address.strip()
+    for address in (
+        mail_to_raw
+        .replace("\r", ",")
+        .replace("\n", ",")
+        .replace(";", ",")
+        .split(",")
+    )
+    if address.strip()
+]
+
+if not recipients:
+    raise RuntimeError("No valid recipients found in MAIL_TO")
+
 message = EmailMessage()
 message["From"] = mail_from
-message["To"] = mail_to
+message["To"] = ", ".join(recipients)
 message["Subject"] = f"[Hotmilk][{module}] {subject}"
 
 message.set_content(
     f"""{content}
 
 ---
-Module: {module}
-Repository: {repository_url}
-Version: {commit_sha[:7]}
+This notification was sent from the Hotmilk GitHub repository.
 """
 )
 
@@ -57,13 +77,21 @@ if smtp_port == 465:
         smtp_host,
         smtp_port,
         context=ssl_context,
+        timeout=30,
     ) as server:
         server.login(smtp_username, smtp_password)
-        server.send_message(message)
-else:
-    with smtplib.SMTP(smtp_host, smtp_port) as server:
-        server.starttls(context=ssl_context)
-        server.login(smtp_username, smtp_password)
-        server.send_message(message)
+        server.send_message(message, to_addrs=recipients)
 
-print("Hotmilk group notification sent successfully.")
+else:
+    with smtplib.SMTP(
+        smtp_host,
+        smtp_port,
+        timeout=30,
+    ) as server:
+        server.ehlo()
+        server.starttls(context=ssl_context)
+        server.ehlo()
+        server.login(smtp_username, smtp_password)
+        server.send_message(message, to_addrs=recipients)
+
+print(f"Email sent successfully to {len(recipients)} recipient(s).")
