@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - General
+          - Notifications 
           - Server Manual
           - Data Guide
           - Storage Policy
