@@ -16,7 +16,6 @@ smtp_host = get_required_env("SMTP_HOST")
 smtp_port = int(get_required_env("SMTP_PORT"))
 smtp_username = get_required_env("SMTP_USERNAME").strip()
 
-# 删除应用密码中可能包含的普通空格和不可见空格
 smtp_password = (
     get_required_env("SMTP_PASSWORD")
     .replace(" ", "")
@@ -41,7 +40,6 @@ content = update_file.read_text(encoding="utf-8").strip()
 if not content:
     raise RuntimeError(f"Update file is empty: {update_file}")
 
-# 支持逗号、分号和换行分隔多个邮箱地址
 recipients = [
     address.strip()
     for address in (
@@ -66,7 +64,8 @@ message.set_content(
     f"""{content}
 
 ---
-This notification was sent from the Hotmilk GitHub repository.
+This notification was sent from the Hotmilk GitHub repository:
+https://github.com/baotong6/Hotmilk
 """
 )
 
