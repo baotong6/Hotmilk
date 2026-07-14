@@ -8,7 +8,8 @@
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Platform-Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
 </p>
----
+
+
 
 # 🥛 Hotmilk Server
 
@@ -22,7 +23,7 @@ This repository serves as the landing page for internal documentation related to
   </a>
 </p>
 
----
+
 
 ## 🌌 Hotmilk Project
 
@@ -39,7 +40,7 @@ For the scientific background, project overview, and recent studies, please visi
   </a>
 </p>
 
----
+
 
 ## 🖥️ About This Repository
 
@@ -54,7 +55,7 @@ It provides documentation for:
 - ⏱️ Timing and spectral-analysis tools
 - 🛠 Common server issues and troubleshooting
 
----
+
 
 ## 📚 Documentation
 
@@ -66,13 +67,13 @@ It provides documentation for:
 | 🧰 Software Environments                                     | Conda, HEASoft, SAS, CIAO, and local environments            |
 | 🛠 Troubleshooting                                           | Common problems and suggested fixes                          |
 
----
+
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/baotong6/Hotmilk/main/assets/hotmilk_banner.png" width="99%" alt="Hotmilk banner" />
 </p>
 
----
+
 
 ## 👤 Maintainer
 
@@ -81,7 +82,7 @@ Maintained by [**Tong Bao**](https://baotong6.github.io/).
 For the scientific project, please visit the [Hotmilk project website](http://www.brera.inaf.it/hotmilk/interest.html).  
 For server usage and internal documentation, please refer to the [Hotmilk Wiki](https://github.com/baotong6/Hotmilk/wiki).
 
----
+
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:9333EA,50:2563EB,100:0B1026&height=120&section=footer" />
