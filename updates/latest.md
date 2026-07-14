@@ -7,6 +7,8 @@ One of the disks in the `/fdata` array has degraded again. Please avoid running 
 Please see the latest update here:
 https://github.com/baotong6/Hotmilk/wiki/Hotmilk-Notifications
 
+This is also the first notification sent through our Hotmilk Server Manual repository, so any feedback would be very welcome.
+
 Best regards,
 
 Tong
