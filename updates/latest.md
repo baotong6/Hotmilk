@@ -2,9 +2,10 @@ Dear all,
 
 The Hotmilk Data Guide has been updated.
 
-Notification:******
+Important notice: One of the disks in the `/fdata` array has degraded again. Please avoid running I/O-intensive jobs or launching too many tasks on `/fdata` until further notice.
 
-Please consult the update page [here](https://github.com/baotong6/Hotmilk/wiki/Notification).
+Please see the latest update here:
+https://github.com/baotong6/Hotmilk/wiki/Hotmilk-Notifications
 
 Best regards,
 
