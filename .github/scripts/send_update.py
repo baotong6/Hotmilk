@@ -64,7 +64,7 @@ message.set_content(
     f"""{content}
 
 ---
-This notification was sent from the Hotmilk GitHub repository:
+This notification was automatically sent from the Hotmilk GitHub repository:
 https://github.com/baotong6/Hotmilk
 """
 )
