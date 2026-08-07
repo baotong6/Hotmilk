@@ -1,13 +1,13 @@
 Dear all,
 
-The Hotmilk Server Manual has been updated with an important notice.
+The Hotmilk Server Manual has been updated with a new option for running graphical applications remotely.
 
-One of the disks in the `/fdata` array has degraded again. Please avoid running I/O-intensive jobs or launching too many tasks on `/fdata` until further notice.
+Xpra is now configured on Hotmilk and can be used to run DS9 remotely in a responsive way. The server-side setup is already complete, so you only need to install and configure Xpra on your local computer.
 
-Please see the latest update here:
-https://github.com/baotong6/Hotmilk/wiki/Hotmilk-Notifications
+Please see the setup and usage instructions here:
+https://github.com/baotong6/Hotmilk/wiki/Remote-GUI-Applications-with-Xpra
 
-This is also the first notification sent through our Hotmilk Server Manual repository, so any feedback would be very welcome.
+Please let me know if you encounter any issues.
 
 Best regards,
 
